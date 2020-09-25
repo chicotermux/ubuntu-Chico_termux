@@ -1,0 +1,40 @@
+#! /data/data/com.termux/files/usr/bin/bash
+echo ' '
+cd $HOME
+#variables
+
+														                red='\033[1;31m'                      green='\033[1;32m'        
+                yellow='\033[1;33m'                  
+                blue='\033[1;34m'            
+                magenta='\033[1;35m'     
+                cyan='\033[1;36m'        
+                reset='\033[0m'
+printf $cyan								       
+figlet Ubuntu| lolcat
+echo "                      https://github.com/chicotermux"| lolcat
+echo " "
+echo 'CREADO POR: CHICO TERMUX
+TOOL:  Sistema Operativo Ubuntu'| lolcat
+sleep 2.0
+echo
+echo ' '
+echo "ACTUALIZANDO PAQUETES"| lolcat
+sleep 2.0
+
+printf $reset
+apt update -y
+apt upgrade -y
+
+cd --
+
+mkdir $HOME/Chico-termux_Ubuntu
+cd $HOME/Chico-termux_Ubuntu
+echo ' '
+
+echo "INSTALANDO UBUNTU EN TU TERMUX"| lolcat
+sleep 2.0
+printf $reset
+pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
+
+./start-ubuntu.sh
+
