@@ -1,4 +1,6 @@
 #! /data/data/com.termux/files/usr/bin/bash
+apt install ruby
+gem install lolcat
 echo ' '
 cd $HOME
 #variables
@@ -27,14 +29,14 @@ apt upgrade -y
 
 cd --
 
-mkdir $HOME/Chico-termux_Ubuntu
-cd $HOME/Chico-termux_Ubuntu
+mkdir $HOME/Ubuntu_C-T
+cd $HOME/Ubuntu_C-T
 echo ' '
-
+figlet -f script Install Ubuntu| lolcat
 echo "INSTALANDO UBUNTU EN TU TERMUX"| lolcat
 sleep 2.0
 printf $reset
 pkg install wget openssl-tool proot -y && hash -r && wget https://raw.githubusercontent.com/EXALAB/AnLinux-Resources/master/Scripts/Installer/Ubuntu/ubuntu.sh && bash ubuntu.sh
-
+rm -rf ubuntu-Chico_termux
 ./start-ubuntu.sh
 
